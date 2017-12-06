@@ -66,7 +66,7 @@
 		<h1 class="instruction_title">QCounterUp: Counter-Up is a lightweight jQuery plugin
             that counts up to a targeted number when the number becomes visible)</h1>
 		<p>
-            <b>QCounterUp</b> uses the plugin  <a href="http://bfintal.github.io/Counter-Up/demo/demo.html">Counter-Up</a>.
+            <b>QCounterUp</b> uses the plugin  <a href="http://ciromattia.github.io/jquery.counterup/demo/index.html">Counter-Up</a>.
             Counter-Up is a jQuery plugin that animates a number from zero (counting up towards it).
 		</p>
 	</div>
