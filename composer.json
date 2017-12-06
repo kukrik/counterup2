@@ -1,0 +1,16 @@
+{
+    "name": "kukrik/counterup2",
+    "description": "QCubed plugin for Counter-Up.",
+    "type": "qcubed-library",
+    "keywords": ["qcubed", "counterup"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.5"
+    },
+    "autoload": {
+      "psr-4": {"QCubed\\Plugin\\": "src/"}
+    },
+    "extra": {
+        "examples": ["counterup.php"]
+    }
+}
