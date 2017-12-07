@@ -65,7 +65,7 @@ class CounterUpBase extends BlockControl {
             'id'=>$this->getJqControlId(),
             'data-counterup-delay' =>$this->intDelay,
             'data-counterup-time'=>$this->intTime,
-            'data_counterup-beginAt'=>$this->intBeginat,
+            'data-counterup-beginAt'=>$this->intBeginat,
             'data-counterup-offset'=>$this->intOffset
         ];
 
