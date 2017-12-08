@@ -20,8 +20,15 @@ if (!defined('QCUBED_COUNTERUP_ASSETS_URL')) {
 /**
  * Class QCounterUp: For showing animated data with Counter Up
  *
- * @package QCubed\Plugin
+ * @property integer $Delay     The delay in milliseconds per number count up.
+ * @property integer $Time      The total duration of the count up animation.
+ * @property integer $BeginAt   The number from which to count up.
+ * @property integer $Offset    The viewport percentile from which the counter starts (by default it's 100,
+ *                              meaning it's triggered at the very moment the element enters the viewport).
+ * @property string $Data       For example, easy to use: $this->strCounterUp->Data = Person::countAll();
+ *                              (lists the number of people or anything else you need).
  *
+ * @package QCubed\Plugin
  */
 
 class CounterUpBase extends BlockControl {
@@ -31,7 +38,7 @@ class CounterUpBase extends BlockControl {
     /** @var  integer Time */
     protected $intTime = null;
     /** @var  integer Beginat */
-    protected $intBeginat = null;
+    protected $intBeginAt = null;
     /** @var  integer Offset */
     protected $intOffset = null;
     /** @var  string Data */
@@ -49,14 +56,6 @@ class CounterUpBase extends BlockControl {
     }
 
     /**
-     * Returns the control id for purposes of attaching events.
-     * @return string
-     */
-    public function getJqControlId() {
-        return $this->ControlId;
-    }
-
-    /**
      * Returns the HTML formatted string for the control
      * @return string HTML string
      */
@@ -65,11 +64,11 @@ class CounterUpBase extends BlockControl {
             'id'=>$this->getJqControlId(),
             'data-counterup-delay' =>$this->intDelay,
             'data-counterup-time'=>$this->intTime,
-            'data-counterup-beginAt'=>$this->intBeginat,
+            'data-counterup-beginAt'=>$this->intBeginAt,
             'data-counterup-offset'=>$this->intOffset
         ];
 
-        $strToReturn = $this->renderTag('span', $overrides, null, $this->strData, false);
+        $strToReturn = $this->renderTag('span', $overrides, null, $this->strData);
         return $strToReturn;
     }
 
@@ -89,7 +88,7 @@ class CounterUpBase extends BlockControl {
         switch ($strName) {
             case "Delay": return $this->intDelay;
             case "Time": return $this->intTime;
-            case "Beginat": return $this->intBeginat;
+            case "BeginAt": return $this->intBeginAt;
             case "Offset": return $this->intOffset;
             case "Data": return $this->strData;
 
@@ -129,10 +128,10 @@ class CounterUpBase extends BlockControl {
                 }
                 break;
 
-            case "Beginat":
+            case "BeginAt":
                 try {
                     $this->blnModified = true;
-                    $this->intBeginat = Type::Cast($mixValue, Type::INTEGER);
+                    $this->intBeginAt = Type::Cast($mixValue, Type::INTEGER);
                 } catch (InvalidCast $objExc) {
                     $objExc->IncrementOffset();
                     throw $objExc;

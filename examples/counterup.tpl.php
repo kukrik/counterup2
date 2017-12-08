@@ -76,6 +76,8 @@
 	<h3>(Scroll down)</h3>
 
 		<span style="height: 100px; margin-top: 45px;"><?php $this->strCounterUp1->render(); ?></span>
+		<span style="height: 100px; margin-left: 20px; margin-top: 45px; font-size: 14px;">
+			Here is a simple example Person from class: lists the number of people.</span>
 
 		<div>
 			<?php $this->strCounterUp2->render(); ?>

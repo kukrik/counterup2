@@ -27,7 +27,7 @@ class SampleForm extends QForm {
 
 		$this->strCounterUp1 = new \QCubed\Plugin\CounterUp($this);
 		$this->strCounterUp1->addCssClass('counter circle');
-		$this->strCounterUp1->Data = '12345';
+		$this->strCounterUp1->Data = Person::countAll(); //Here is a simple example: lists the number of people
 
 		/**
 		 * This first block.
@@ -69,7 +69,7 @@ class SampleForm extends QForm {
 		$this->strCounterUp7 = new \QCubed\Plugin\CounterUp($this);
 		$this->strCounterUp7->Data = '12345';
 		$this->strCounterUp7->Time = '2000';
-		$this->strCounterUp7->Beginat = '3000';
+		$this->strCounterUp7->BeginAt = '3000';
 		$this->strCounterUp7->DisplayStyle = DisplayType::INLINE_BLOCK;
 		$this->strCounterUp7->Width = '32%';
 
@@ -111,7 +111,6 @@ class SampleForm extends QForm {
 		$this->strCounterUp13->Width = '32%';
 
 		}
-
-	}
+}
 
 SampleForm::run('SampleForm');
