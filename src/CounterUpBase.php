@@ -166,5 +166,5 @@ class CounterUpBase extends BlockControl {
                     throw $objExc;
                 }
         }
-	}
+    }
 }
