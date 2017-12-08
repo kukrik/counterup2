@@ -33,6 +33,8 @@ if (!defined('QCUBED_COUNTERUP_ASSETS_URL')) {
 
 class CounterUpBase extends BlockControl {
 
+    protected $blnUseWrapper = false;
+
     /** @var  integer Delay */
     protected $intDelay = null;
     /** @var  integer Time */
